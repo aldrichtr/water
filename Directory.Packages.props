@@ -1,0 +1,19 @@
+<Project>
+    <PropertyGroup>
+      <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
+      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    </PropertyGroup>
+    <!-- Versions -->
+    <PropertyGroup>
+        <LiteGraphVersion>4.1.8</LiteGraphVersion>
+        <MSTestVersion>3.6.4</MSTestVersion>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="MSTest" Version="$(MSTestVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageVersion Include="LiteGraph" Version="$(LiteGraphVersion)" />
+  </ItemGroup>
+</Project>

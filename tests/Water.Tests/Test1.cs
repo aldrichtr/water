@@ -1,0 +1,13 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Water;
+
+namespace Water.Tests;
+
+[TestClass]
+public sealed class Test1
+{
+    [TestMethod]
+    public void TestMethod1()
+    {
+    }
+}

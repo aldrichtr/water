@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Project information -->
+  <PropertyGroup>
+    <PackageId>Water</PackageId>
+    <Description>Achieve mind-like-water</Description>
+    <Version>0.1.0</Version>
+    <Authors>Timothy R. Aldrich</Authors>
+    <Copyright>2025 Timothy R. Aldrich. All rights reserved.</Copyright>
+    <Company>ASI</Company>
+    <GeneratedAssemblyInfoFile>assemblyinfo.cs</GeneratedAssemblyInfoFile>
+  </PropertyGroup>
+
+  <!-- Compiler Settings -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <!-- Output Settings -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <UseCommonOutputDirectory>PreserveNewest</UseCommonOutputDirectory>
+  </PropertyGroup>
+
+
+  <!-- Includes -->
+  <ItemGroup>
+    <PackageReference Include="LiteGraph"/>
+  </ItemGroup>
+</Project>
