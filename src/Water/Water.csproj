@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <!-- Project information -->
   <PropertyGroup>
     <PackageId>Water</PackageId>
@@ -9,26 +8,38 @@
     <Authors>Timothy R. Aldrich</Authors>
     <Copyright>2025 Timothy R. Aldrich. All rights reserved.</Copyright>
     <Company>ASI</Company>
-    <GeneratedAssemblyInfoFile>assemblyinfo.cs</GeneratedAssemblyInfoFile>
   </PropertyGroup>
-
   <!-- Compiler Settings -->
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+  <ItemGroup>
+    <InternalsVisibleTo Include="Water.Tests" />
+  </ItemGroup>
   <!-- Output Settings -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
     <UseCommonOutputDirectory>PreserveNewest</UseCommonOutputDirectory>
   </PropertyGroup>
-
-
+  <!-- TODO: Move these to a Directory.Packages.props -->
   <!-- Includes -->
   <ItemGroup>
-    <PackageReference Include="LiteGraph"/>
+    <PackageReference Include="LiteGraph" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" />
+    <PackageReference Include="Spectre.Console" />
+    <PackageReference Include="Spectre.Console.Cli" />
   </ItemGroup>
 </Project>

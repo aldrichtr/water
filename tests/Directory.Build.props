@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <!-- SECTION: Import Parent Build File  -->
+  <PropertyGroup>
+    <ParentDirectory>$([System.IO.Directory]::GetParent($(MSBuildThisFileDirectory)'))</ParentDirectory>
+    <ParentPackageFile>$([MSBuild]::GetPathOfFileAbove(
+      'Directory.Build.props',
+      $(ParentDirectory)))
+  </ParentPackageFile>
+  </PropertyGroup>
+  <ImportGroup>
+    <Import Project="$(ParentPackageFile)" />
+  </ImportGroup>
+  <PropertyGroup>
+    <TestSettingsDirectory>$(TestsDirectory)settings</TestSettingsDirectory>
+    <TestDataDirectory>$(TestsDirectory)data</TestDataDirectory>
+    <TestOutputDirectory>$(ArtifactDirectory)CodeQuality</TestOutputDirectory>
+    <TestOutputFile>$(MSBuildProjectName).json</TestOutputFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Testing">
+    <IsTestProject>true</IsTestProject>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <!-- Displays error on console in addition to the log file. -->
+    <TestingPlatformShowTestsFailure>true</TestingPlatformShowTestsFailure>
+    <TestingPlatformCaptureOutput>true</TestingPlatformCaptureOutput>
+  </PropertyGroup>
+  <PropertyGroup Label="Code Quality">
+    <ErrorLog>$(TestOutputDirectory)$(TestOutputFile)</ErrorLog>
+  </PropertyGroup>
+</Project>

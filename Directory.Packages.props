@@ -1,19 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project>
-    <PropertyGroup>
-      <!-- Enable central package management, https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
-      <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
-    </PropertyGroup>
-    <!-- Versions -->
-    <PropertyGroup>
-        <LiteGraphVersion>4.1.8</LiteGraphVersion>
-        <MSTestVersion>3.6.4</MSTestVersion>
-    </PropertyGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="MSTest" Version="$(MSTestVersion)" />
+  <!-- ======================================================================================================== -->
+  <!-- ==================================== Package Management ================================================ -->
+  <!-- ======================================================================================================== -->
+  <PropertyGroup>
+    <!-- Enable central package management,
+    https://learn.microsoft.com/en-us/nuget/consume-packages/Central-Package-Management -->
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <!-- Versions -->
+  <ItemGroup Label="Water">
+    <PackageVersion Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
+    <PackageVersion Include="Microsoft.Extensions.Configuration" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.Logging" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.Extensions.Logging.Console" Version="9.0.10" />
+    <PackageVersion Include="Microsoft.PowerShell.SDK" Version="7.5.3" />
+    <PackageVersion Include="Spectre.Console" Version="0.51.1" />
+    <PackageVersion Include="Spectre.Console.Cli" Version="0.51.1" />
+    <PackageVersion Include="LiteGraph" Version="4.1.8" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageVersion Include="LiteGraph" Version="$(LiteGraphVersion)" />
+  <ItemGroup Label="Build">
+    <PackageVersion Include="Nuke.Common" Version="9.0.4" />
+  </ItemGroup>
+  <ItemGroup Label="Tests">
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageVersion Include="MSTest" Version="3.6.4" />
   </ItemGroup>
 </Project>
